@@ -1,12 +1,13 @@
-# Liste cu parametrii pentru fiecare snap-hook
+# Lists with parameters for each snap-hook
 
-parametrii_snap_hook = [
+snap_hook_parameters = [
     "Material",
     "E (Flexural Modulus)",
     "b (Base Width)",
     "t/h (Wall Thickness)",
     "L (Length of Latch)",
     "α (Engagement Angle)",
+    "α' (Retraction Angle)"
     "ε (Strain)",
     "μ (Friction Coefficient)",
     "K (Geometric Factor)",
@@ -21,11 +22,11 @@ parametrii_snap_hook = [
     "R (Radius at neutral axis)",
     "c (Distance outer fiber - neutral axis)",
     "I (Moment of Inertia - Latch)",
-    "r (Radius at base)"
+    "r (Radius at base)",
+    "Q (Deflection Magnification Factor)"
 ]
 
-parametrii_sh_rectangular = [
-    "Material",
+parameters_sh_rectangular_improved = [
     "E (Flexural Modulus)",
     "b (Base Width)",
     "t/h (Wall Thickness)",
@@ -33,10 +34,22 @@ parametrii_sh_rectangular = [
     "α (Engagement Angle)",
     "ε (Strain)",
     "μ (Friction Coefficient)",
+    "α' (Retraction Angle)",
+    "Q (Deflection Magnification Factor)"
 ]
 
-parametrii_sh_trapezoid = [
-    "Material",
+parameters_sh_rectangular_classic = [
+    "E (Flexural Modulus)",
+    "b (Base Width)",
+    "t/h (Wall Thickness)",
+    "L (Length of Latch)",
+    "α (Engagement Angle)",
+    "ε (Strain)",
+    "μ (Friction Coefficient)",
+    "α' (Retraction Angle)"
+]
+
+parameters_sh_trapezoid = [
     "E (Flexural Modulus)",
     "b (Base Width)",
     "t/h (Wall Thickness)",
@@ -46,10 +59,10 @@ parametrii_sh_trapezoid = [
     "μ (Friction Coefficient)",
     "a (base) (Big base - Trapezoidal)",
     "b (base) (Small base - Trapezoidal)",
+    "α' (Retraction Angle)"
 ]
 
-parametrii_sh_ring_segment = [
-    "Material",
+parameters_sh_ring_segment = [
     "E (Flexural Modulus)",
     "b (Base Width)",
     "t/h (Wall Thickness)",
@@ -61,10 +74,10 @@ parametrii_sh_ring_segment = [
     "r2 (Outer radius for circular)",
     "K (Geometric Factor)",
     "Z (Section Modulus)",
+    "α' (Retraction Angle)"
 ]
 
-parametrii_sh_irregular = [
-    "Material",
+parameters_sh_irregular = [
     "E (Flexural Modulus)",
     "b (Base Width)",
     "t/h (Wall Thickness)",
@@ -74,10 +87,30 @@ parametrii_sh_irregular = [
     "μ (Friction Coefficient)",
     "c (Distance outer fiber - neutral axis)",
     "Z (Section Modulus)",
+    "α' (Retraction Angle)"
 ]
 
-parametrii_sh_l_shaped = [
-    "Material",
+parameters_sh_l_shaped = [
+    "E (Flexural Modulus)",
+    "b (Base Width)",
+    "t/h (Wall Thickness)",
+    "ε (Strain)",
+    "L1 (Length of slot)",
+    "L2 (Length of support [1])",
+    "R (Radius at neutral axis)",
+]
+
+parameters_sh_u_shaped_c1 = [
+    "E (Flexural Modulus)",
+    "b (Base Width)",
+    "t/h (Wall Thickness)",
+    "ε (Strain)",
+    "L1 (Length of slot)",
+    "L2 (Length of support [1])",
+    "R (Radius at neutral axis)",
+]
+
+parameters_sh_u_shaped_c2 = [
     "E (Flexural Modulus)",
     "b (Base Width)",
     "t/h (Wall Thickness)",
@@ -88,147 +121,186 @@ parametrii_sh_l_shaped = [
     "R (Radius at neutral axis)",
 ]
 
-parametrii_sh_u_shaped = [
-    "Material",
-    "E (Flexural Modulus)",
-    "b (Base Width)",
-    "t/h (Wall Thickness)",
-    "ε (Strain)",
-    "L1 (Length of slot)",
-    "L2 (Length of support [1])",
-    "L3 (Length of support [2])",
-    "R (Radius at neutral axis)",
-]
-
-# Definirea tipurilor de snap-hook-uri
+# Definition of snap-hook types
 snap_hooks = [
     {
-        "nume": "A1 - 1",
-        "tip": "Type 1",
-        "caracteristica": "Rectangle",
-        "cale_imagine": "media/rectangleA11T1.jpg"
+        "name": "Improved - Rectangular - Type 1",
+        "type": "A1 - 1",
+        "characteristic": "Rectangle",
+        "image_path": "media/Uniform1Beam.jpg",
+        "section_image_path": "media/ConstantSectionCase.png"
     },
     {
-        "nume": "A1 - 2",
-        "tip": "Type 2",
-        "caracteristica": "Rectangle",
-        "cale_imagine": "media/rectangleA12T2.jpg"
+        "name": "Improved - Rectangular - Type 2",
+        "type": "A1 - 2",
+        "characteristic": "Rectangle",
+        "image_path": "media/Uniform2Beam.jpg",
+        "section_image_path": "media/ConstantSectionCase.png"
     },
     {
-        "nume": "A1 - 3",
-        "tip": "Type 3",
-        "caracteristica": "Rectangle",
-        "cale_imagine": "media/rectangleA13T3.jpg"
+        "name": "Improved - Rectangular - Type 3",
+        "type": "A1 - 3",
+        "characteristic": "Rectangle",
+        "image_path": "media/Uniform3Beam.jpg",
+        "section_image_path": "media/ConstantSectionCase.png"
     },
     {
-        "nume": "A1 - 4",
-        "tip": "Type 4",
-        "caracteristica": "Rectangle",
-        "cale_imagine": "media/rectangleA14T4.jpg"
+        "name": "Improved - Rectangular - Type 4",
+        "type": "A1 - 4",
+        "characteristic": "Rectangle",
+        "image_path": "media/Uniform4Beam.jpg",
+        "section_image_path": "media/ConstantSectionCase.png"
     },
     {
-        "nume": "A1 - 5",
-        "tip": "Type 5",
-        "caracteristica": "Rectangle",
-        "cale_imagine": "media/rectangleA15T5.jpg"
+        "name": "Improved - Rectangular - Type 5",
+        "type": "A1 - 5",
+        "characteristic": "Rectangle",
+        "image_path": "media/Uniform5Beam.jpg",
+        "section_image_path": "media/ConstantSectionCase.png"
     },
     {
-        "nume": "A2T",
-        "tip": "Type 2T",
-        "caracteristica": "Rectangle",
-        "cale_imagine": "media/rectangleA2T2T.jpg"
+        "name": "Improved - Rectangular - Type 2T",
+        "type": "A2T",
+        "characteristic": "Rectangle",
+        "image_path": "media/Tapered2Beam.jpg",
+        "section_image_path": "media/HalfDecreaseSectionCase.png"
     },
     {
-        "nume": "A5T",
-        "tip": "Type 5T",
-        "caracteristica": "Rectangle",
-        "cale_imagine": "media/rectangleA5T5T.jpg"
+        "name": "Improved - Rectangular - Type 5T",
+        "type": "A5T",
+        "characteristic": "Rectangle",
+        "image_path": "media/Tapered5Beam.jpg",
+        "section_image_path": "media/HalfDecreaseSectionCase.png"
     },
     {
-        "nume": "B1",
-        "tip": "Constant",
-        "caracteristica": "Trapezoid",
-        "cale_imagine": "media/trapezoidB1constant.png"
+        "name": "L Beam",
+        "type": "L-shaped",
+        "characteristic": "Rectangle",
+        "image_path": "media/LBeam.jpg",
+        "section_image_path": "media/LB.jpg"
     },
     {
-        "nume": "B2",
-        "tip": "Decrease 1/2",
-        "caracteristica": "Trapezoid",
-        "cale_imagine": "media/trapezoidB2decreasehalf.png"
+        "name": "U Beam Case1",
+        "type": "U-shaped Case 1",
+        "characteristic": "Rectangle",
+        "image_path": "media/UBeamCase1.jpg",
+        "section_image_path": "media/UBCase1.jpg"
     },
     {
-        "nume": "B3",
-        "tip": "Decrease 1/4",
-        "caracteristica": "Trapezoid",
-        "cale_imagine": "media/trapezoidB3decreasequarter.png"
+        "name": "U Beam Case2",
+        "type": "U-shaped Case 2",
+        "characteristic": "Rectangle",
+        "image_path": "media/UBeamCase2.jpg",
+        "section_image_path": "media/UBCase2.jpg"
     },
     {
-        "nume": "C1",
-        "tip": "Constant",
-        "caracteristica": "Ring segment",
-        "cale_imagine": "media/ringsegmentC1constant.png"
+        "name": "Classic - Rectangular - Constant",
+        "type": "A1 - Constant",
+        "characteristic": "Rectangle",
+        "image_path": "media/Trapezoid1Beam.png",
+        "section_image_path": "media/ConstantSectionCase.png"
     },
     {
-        "nume": "C2",
-        "tip": "Decrease 1/2",
-        "caracteristica": "Ring segment",
-        "cale_imagine": "media/ringsegmentC2decreasehalf.png"
+        "name": "Classic - Rectangular - Decrease 1/2 - Y",
+        "type": "A2 - Decrease 1/2",
+        "characteristic": "Rectangle",
+        "image_path": "media/Trapezoid1Beam.png",
+        "section_image_path": "media/HalfDecreaseSectionCase.png"
     },
     {
-        "nume": "C3",
-        "tip": "Decrease 1/4",
-        "caracteristica": "Ring segment",
-        "cale_imagine": "media/ringsegmentC3decreasequarter.png"
+        "name": "Classic - Rectangular - Decrease 1/4 - Z",
+        "type": "A3 - Decrease 1/4",
+        "characteristic": "Trapezoid",
+        "image_path": "media/Trapezoid1Beam.png",
+        "section_image_path": "media/QuarterDecreaseSectionCase.png"
     },
     {
-        "nume": "D1",
-        "tip": "Constant",
-        "caracteristica": "Irregular",
-        "cale_imagine": "media/irregularD1constant.png"
+        "name": "Classic - Trapezoid - Constant",
+        "type": "B1 - Constant",
+        "characteristic": "Trapezoid",
+        "image_path": "media/Trapezoid1Beam.png",
+        "section_image_path": "media/ConstantSectionCase.png"
     },
     {
-        "nume": "D2",
-        "tip": "Decrease 1/2",
-        "caracteristica": "Irregular",
-        "cale_imagine": "media/irregularD2decreasehalf.png"
+        "name": "Classic - Trapezoid - Decrease 1/2 - Y",
+        "type": "B2 - Decrease 1/2",
+        "characteristic": "Trapezoid",
+        "image_path": "media/Trapezoid1Beam.png",
+        "section_image_path": "media/HalfDecreaseSectionCase.png"
     },
     {
-        "nume": "D3",
-        "tip": "Decrease 1/4",
-        "caracteristica": "Irregular",
-        "cale_imagine": "media/irregularD3decreasequarter.png"
+        "name": "Classic - Trapezoid - Decrease 1/4 - Z",
+        "type": "B3 - Decrease 1/4",
+        "characteristic": "Trapezoid",
+        "image_path": "media/Trapezoid1Beam.png",
+        "section_image_path": "media/QuarterDecreaseSectionCase.png"
     },
     {
-        "nume": "L",
-        "tip": "L-shaped",
-        "caracteristica": "Rectangle",
-        "cale_imagine": "media/L-Shaped.jpg"
+        "name": "Classic - Ring segment - Constant",
+        "type": "C1 - Constant",
+        "characteristic": "Ring segment",
+        "image_path": "media/Ring1Beam.png",
+        "section_image_path": "media/ConstantSectionCase.png"
     },
     {
-        "nume": "U 1",
-        "tip": "U-shaped Case 1",
-        "caracteristica": "Rectangle",
-        "cale_imagine": "media/UshapedC1.jpg"
+        "name": "Classic - Ring segment - Decrease 1/2 - Y",
+        "type": "C2 - Decrease 1/2",
+        "characteristic": "Ring segment",
+        "image_path": "media/Ring1Beam.png",
+        "section_image_path": "media/HalfDecreaseSectionCase.png"
     },
     {
-        "nume": "U 2",
-        "tip": "U-shaped Case 2",
-        "caracteristica": "Rectangle",
-        "cale_imagine": "media/UshapedC2.jpg"
+        "name": "Classic - Ring segment - Decrease 1/4 - Z",
+        "type": "C3 - Decrease 1/4",
+        "characteristic": "Ring segment",
+        "image_path": "media/Ring1Beam.png",
+        "section_image_path": "media/QuarterDecreaseSectionCase.png"
     },
+    {
+        "name": "Classic - Irregular - Constant",
+        "type": "D1 - Constant",
+        "characteristic": "Irregular",
+        "image_path": "media/Irregular1Beam.png",
+        "section_image_path": "media/ConstantSectionCase.png"
+    },
+    {
+        "name": "Classic - Irregular - Decrease 1/2 - Y",
+        "type": "D2 - Decrease 1/2",
+        "characteristic": "Irregular",
+        "image_path": "media/Irregular1Beam.png",
+        "section_image_path": "media/HalfDecreaseSectionCase.png"
+    },
+    {
+        "name": "Classic - Irregular - Decrease 1/4 - Z",
+        "type": "D3 - Decrease 1/4",
+        "characteristic": "Irregular",
+        "image_path": "media/Irregular1Beam.png",
+        "section_image_path": "media/QuarterDecreaseSectionCase.png"
+    }
 ]
 
-# Adaugarea listei de parametrii in fiecare dicționar
+# Adding the parameters list to each dictionary
 for snap_hook in snap_hooks:
-    if snap_hook["nume"] in ["A1 - 1", "A1 - 2", "A1 - 3", "A1 - 4", "A1 - 5", "A2T", "A5T"]:
-        snap_hook["campuri"] = parametrii_sh_rectangular
-    elif snap_hook["nume"] in ["B1", "B2", "B3"]:
-        snap_hook["campuri"] = parametrii_sh_trapezoid
-    elif snap_hook["nume"] in ["C1", "C2", "C3"]:
-        snap_hook["campuri"] = parametrii_sh_ring_segment
-    elif snap_hook["nume"] in ["D1", "D2", "D3"]:
-        snap_hook["campuri"] = parametrii_sh_irregular
-    elif snap_hook["nume"] in ["L"]:
-        snap_hook["campuri"] = parametrii_sh_l_shaped
-    elif snap_hook["nume"] in ["U 1", "U 2"]:
-        snap_hook["campuri"] = parametrii_sh_u_shaped
+    if snap_hook["name"] in ["Improved - Rectangular - Type 1", "Improved - Rectangular - Type 2",
+                             "Improved - Rectangular - Type 3", "Improved - Rectangular - Type 4",
+                             "Improved - Rectangular - Type 5", "Improved - Rectangular - Type 2T",
+                             "Improved - Rectangular - Type 5T"]:
+        snap_hook["fields"] = parameters_sh_rectangular_improved
+    elif snap_hook["name"] in ["L Beam"]:
+        snap_hook["fields"] = parameters_sh_l_shaped
+    elif snap_hook["name"] in ["U Beam Case1"]:
+        snap_hook["fields"] = parameters_sh_u_shaped_c1
+    elif snap_hook["name"] in ["U Beam Case2"]:
+        snap_hook["fields"] = parameters_sh_u_shaped_c2
+    elif snap_hook["name"] in ["Classic - Rectangular - Constant", "Classic - Rectangular - Decrease 1/2 - Y",
+                               "Classic - Rectangular - Decrease 1/4 - Z"]:
+        snap_hook["fields"] = parameters_sh_rectangular_classic
+    elif snap_hook["name"] in ["Classic - Trapezoid - Constant", "Classic - Trapezoid - Decrease 1/2 - Y",
+                               "Classic - Trapezoid - Decrease 1/4 - Z"]:
+        snap_hook["fields"] = parameters_sh_trapezoid
+    elif snap_hook["name"] in ["Classic - Ring segment - Constant", "Classic - Ring segment - Decrease 1/2 - Y",
+                               "Classic - Ring segment - Decrease 1/4 - Z"]:
+        snap_hook["fields"] = parameters_sh_ring_segment
+    elif snap_hook["name"] in ["Classic - Irregular - Constant", "Classic - Irregular - Decrease 1/2 - Y",
+                               "Classic - Irregular - Decrease 1/4 - Z"]:
+        snap_hook["fields"] = parameters_sh_irregular
