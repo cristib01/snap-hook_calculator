@@ -47,9 +47,9 @@ def afiseaza_tabele_ajutatoare(snap_hook):
 
     # Alege calea corectă a imaginii în funcție de tipul snap-hook-ului
     if snap_hook["nume"] in ["C1", "C2", "C3"]:
-        cale_imagine = "cale_imagini_tabel_c.jpg"  # Înlocuiți "cale_imagini_tabel_c.jpg" cu calea reală către imaginea C
+        cale_imagine = "media/K1K2.JPG"  # Înlocuiți "cale_imagini_tabel_c.jpg" cu calea reală către imaginea C
     elif snap_hook["nume"] in ["D1", "D2", "D3"]:
-        cale_imagine = "cale_imagini_tabel_d.jpg"  # Înlocuiți "cale_imagini_tabel_d.jpg" cu calea reală către imaginea D
+        cale_imagine = "Z1Z2.JPG"  # Înlocuiți "cale_imagini_tabel_d.jpg" cu calea reală către imaginea D
 
     # Adaugă imaginea în noul window
     imagine_tabel = Image.open(cale_imagine)
